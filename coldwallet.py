@@ -84,6 +84,7 @@ def paper_wallet(password):
             x = h_sep + i * (ww + h_sep)
             y = v_sep + j * (wh + v_sep)
             paper.paste(wallet, (x,y))
+    paper = paper.resize((paper.size[0] / 2, paper.size[1] / 2))
     return paper
 
 if __name__ == '__main__':
