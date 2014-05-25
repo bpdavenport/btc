@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 
 import sys
-from pybitcointools.main import *
+
+# pybitcointools from (e.g.) github.com:vbuterin/pybitcointools.git
+try:
+    from pybitcointools.main import *
+except ImportError:
+    from bitcoin.main import *
+
 from PIL import Image, ImageFont, ImageOps, ImageChops, ImageDraw
 import qrcode
 from bip38 import *
@@ -117,4 +123,5 @@ Usage:
       Generates an 8.5x11 @ 300dpi image with 8 BIP38 cold wallets
 
     If filename is not provided, output will be to wallet.png by default
+
 """
